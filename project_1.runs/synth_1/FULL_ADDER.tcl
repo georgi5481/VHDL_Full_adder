@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/georg/project_1/project_1.runs/synth_1/First_example.tcl"
+  variable script "C:/Users/georg/project_1/project_1.runs/synth_1/FULL_ADDER.tcl"
   variable category "vivado_synth"
 }
 
@@ -82,10 +82,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Users/georg/project_1/project_1.srcs/utils_1/imports/synth_1/First_example.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top First_example -part xc7a200tfbg676-2
+synth_design -top FULL_ADDER -part xc7a200tfbg676-2
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -95,10 +97,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef First_example.dcp
+write_checkpoint -force -noxdef FULL_ADDER.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-generate_parallel_reports -reports { "report_utilization -file First_example_utilization_synth.rpt -pb First_example_utilization_synth.pb"  } 
+generate_parallel_reports -reports { "report_utilization -file FULL_ADDER_utilization_synth.rpt -pb FULL_ADDER_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

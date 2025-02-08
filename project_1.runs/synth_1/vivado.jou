@@ -3,11 +3,11 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Sat Feb  8 13:33:09 2025
-# Process ID         : 20148
+# Start of session at: Sat Feb  8 15:23:58 2025
+# Process ID         : 17452
 # Current directory  : C:/Users/georg/project_1/project_1.runs/synth_1
-# Command line       : vivado.exe -log First_example.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source First_example.tcl
-# Log file           : C:/Users/georg/project_1/project_1.runs/synth_1/First_example.vds
+# Command line       : vivado.exe -log FULL_ADDER.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FULL_ADDER.tcl
+# Log file           : C:/Users/georg/project_1/project_1.runs/synth_1/FULL_ADDER.vds
 # Journal file       : C:/Users/georg/project_1/project_1.runs/synth_1\vivado.jou
 # Running On         : DESKTOP-4F9HJUU
 # Platform           : Windows Server 2016 or Windows 10
@@ -19,6 +19,6 @@
 # Host memory        : 16866 MB
 # Swap memory        : 5637 MB
 # Total Virtual      : 22504 MB
-# Available Virtual  : 10681 MB
+# Available Virtual  : 10552 MB
 #-----------------------------------------------------------
-source First_example.tcl -notrace
+source FULL_ADDER.tcl -notrace

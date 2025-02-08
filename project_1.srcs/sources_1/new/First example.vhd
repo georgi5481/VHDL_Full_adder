@@ -31,21 +31,19 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity First_example is
- port (  
-    Clk : in std_logic ; 
-    Reset : in std_logic  ; 
-    Interrupt : in std_logic; 
-   Interrupt_Address : in STD_LOGIC_VECTOR ( 0 to 31 ); 
-   Interrupt_Ack : out std_logic_vector ( 0 to 1 ) ; 
-   Instr_Addr : out std_logic_vector ( 0 to 31 ) ; 
-   Instr : in std_logic_vector (0 to 31)
-     );
+entity FULL_ADDER is
+ port (     A : in std_logic ;
+            B : in std_logic ; 
+         C_IN : in std_logic ; 
+            S : out std_logic ; 
+        C_OUT : out std_logic );
  
-end First_example;
-
-architecture Behavioral of First_example is
-
+end entity FULL_ADDER;
+--Defining bhavioral of entity
+architecture Behavioral of FULL_ADDER is
 begin
 
-end Behavioral;
+S <= (A XOR B) XOR C_IN ;
+C_OUT <= (A AND B) OR ((A XOR B) AND C_IN); 
+
+end architecture Behavioral;

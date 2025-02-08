@@ -1,10 +1,10 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Sat Feb  8 13:33:29 2025
+| Date         : Sat Feb  8 15:24:18 2025
 | Host         : DESKTOP-4F9HJUU running 64-bit major release  (build 9200)
-| Command      : report_utilization -file First_example_utilization_synth.rpt -pb First_example_utilization_synth.pb
-| Design       : First_example
+| Command      : report_utilization -file FULL_ADDER_utilization_synth.rpt -pb FULL_ADDER_utilization_synth.pb
+| Design       : FULL_ADDER
 | Device       : xc7a200tfbg676-2
 | Speed File   : -2
 | Design State : Synthesized
@@ -31,8 +31,8 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |    0 |     0 |          0 |    134600 |  0.00 |
-|   LUT as Logic          |    0 |     0 |          0 |    134600 |  0.00 |
+| Slice LUTs*             |    1 |     0 |          0 |    134600 | <0.01 |
+|   LUT as Logic          |    1 |     0 |          0 |    134600 | <0.01 |
 |   LUT as Memory         |    0 |     0 |          0 |     46200 |  0.00 |
 | Slice Registers         |    0 |     0 |          0 |    269200 |  0.00 |
 |   Register as Flip Flop |    0 |     0 |          0 |    269200 |  0.00 |
@@ -93,7 +93,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    0 |     0 |          0 |       400 |  0.00 |
+| Bonded IOB                  |    5 |     0 |          0 |       400 |  1.25 |
 | Bonded IPADs                |    0 |     0 |          0 |        26 |  0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |        16 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |        10 |  0.00 |
@@ -151,6 +151,10 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
++----------+------+---------------------+
+| IBUF     |    3 |                  IO |
+| OBUF     |    2 |                  IO |
+| LUT3     |    2 |                 LUT |
 +----------+------+---------------------+
 
 
